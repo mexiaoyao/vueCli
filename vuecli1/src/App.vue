@@ -9,7 +9,6 @@
 </template>
 
 <style lang="less">
-@import '../public/iconfont/iconfont.css';
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
