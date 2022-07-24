@@ -7,9 +7,12 @@ import store from "./store";
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 
-import MyIcon from "./components/Icon";
-
-Vue.component("MyIcon", MyIcon);
+// 全局引用IconFont
+// import { Icon } from "ant-design-vue";
+// const IconFont = Icon.createFromIconfontCN({
+//   scriptUrl: "../public/iconfont/iconfont.js",
+// });
+// Vue.component("icon-font", IconFont);
 
 //可以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false;

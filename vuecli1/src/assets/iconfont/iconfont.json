@@ -1,0 +1,58 @@
+{
+  "id": "3504870",
+  "name": "数据统计",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "139829",
+      "name": "群组多人",
+      "font_class": "qunzuduoren",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "1280623",
+      "name": "Message-1",
+      "font_class": "54xiaoxi-1",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "2170953",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "5809196",
+      "name": "群聊",
+      "font_class": "qunliao",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "11674281",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e713",
+      "unicode_decimal": 59155
+    },
+    {
+      "icon_id": "15388185",
+      "name": "用户名",
+      "font_class": "yonghuming",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "15994143",
+      "name": "视频通话",
+      "font_class": "shipintonghua",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    }
+  ]
+}

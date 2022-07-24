@@ -4,18 +4,59 @@
         <HelloWorld msg="Welcome to Your Vue.js App" />
         <a-button type="primary">Ant Design Vue</a-button>
         <a-icon style="font-size:80px;color: #8be27e;" type="team" />########################
-        <my-icon color="red" name="xiaoxi" size="80" />
+        <icon-font style="color:#686868;font-size:58px;" type="icon-qunzuduoren" />
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import { Icon } from 'ant-design-vue';
+import iconUrl from '@/assets/iconfont/iconfont.js';
+const IconFont = Icon.createFromIconfontCN({
+    scriptUrl: iconUrl,
+});
 import HelloWorld from '@/components/HelloWorld.vue';
+//import { IconFont } from '@/core/IconFont';
 
 export default {
     name: 'home',
     components: {
         HelloWorld,
+        IconFont,
+    },
+    created() {
+        this.arrayEvery();
+        console.log('########################################');
+        this.arrMap();
+    },
+    methods: {
+        /**
+         * every不满足条件时即返回false并只执行此次，不再继续执行
+         * **/
+        arrayEvery() {
+            const parmes = [1, 2, 3, 4, 5];
+            console.log(
+                parmes.every((item, index, arr) => {
+                    console.log('item=>' + item + ' index=》' + index + ' arr=>' + arr);
+                    return item > 3;
+                })
+            );
+            console.log(parmes);
+        },
+        /**
+         * 会遍历所有参数
+         * 遍历中必须加都return 否则返回结果中不满足条件的会返回undefinde
+         *
+         * **/
+        arrMap() {
+            const arrMap = [1, 2, 3, 4, 5];
+            let arrMap1 = arrMap.map((item) => {
+                let parmes = item * 2;
+                console.log('item=》' + parmes);
+                return parmes;
+            });
+            console.log(arrMap1);
+            console.log(arrMap);
+        },
     },
 };
 </script>
