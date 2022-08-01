@@ -35,8 +35,8 @@ export default {
         this.arrayIndexOf();
         console.log('#################arrayFind#######################');
         this.arrayFind();
-        console.log('#################useDiff#######################');
-        this.useDiff();
+        console.log('#################useMoment#######################');
+        this.useMoment();
     },
     methods: {
         /**
@@ -149,7 +149,7 @@ export default {
             moment().format('LLLL'); // 2021年5月11日星期二下午6点42分
             moment().format('llll'); // 2021年5月11日星期二 18:42
          * **/
-        useDiff() {
+        useMoment() {
             //npm install moment --save
             //import moment from 'moment'
             //Vue.prototype.$moment = moment; 在main中实现全局
