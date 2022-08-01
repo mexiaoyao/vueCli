@@ -110,6 +110,44 @@ export default {
         },
         /**
          * diff()使用方法
+         * 格式	含义	举例	备注
+            yyyy	年	2021	同YYYY
+            M	月	1	不补0
+            MM	月	01	 
+            d	日	2	不补0
+            dd	日	02	 
+            dddd	星期	星期二	 
+            H	小时	3	24小时制；不补0
+            HH	小时	18	24小时制
+            h	小时	3	12小时制，须和 A 或 a 使用；不补0
+            hh	小时	03	12小时制，须和 A 或 a 使用
+            m	分钟	4	不补0
+            mm	分钟	04	 
+            s	秒	5	不补0
+            ss	秒	05	 
+            A	AM/PM	AM	仅 format 可用，大写
+            a	am/pm	am	仅 format 可用，小写
+
+            let time = new Date();  //获取当前时间  Tue May 11 2021 18:42:51 GMT+0800 (中国标准时间)
+            let year = time.getFullYear();  //获取年 2021
+            let month = time.getMonth() + 1;  //获取月  5
+            let day = time.getDate();    //获取天  11
+            let h = time.getHours();   //获取小时  18
+            let m = time.getMinutes();  //获取分钟  42
+            let s = time.getSeconds();    //获取秒  51
+            let weekDay = time.getDay();  //获取星期  2
+
+            moment.locale(); // zh-cn
+            moment().format('LT'); // 18:42
+            moment().format('LTS'); // 18:42:31
+            moment().format('L'); // 2021/05/11
+            moment().format('l'); // 2021/5/11
+            moment().format('LL'); // 2021年5月11日
+            moment().format('ll'); // 2021年5月11日
+            moment().format('LLL'); // 2021年5月11日下午6点42分
+            moment().format('lll'); // 2021年5月11日 18:42
+            moment().format('LLLL'); // 2021年5月11日星期二下午6点42分
+            moment().format('llll'); // 2021年5月11日星期二 18:42
          * **/
         useDiff() {
             //npm install moment --save
@@ -138,6 +176,7 @@ export default {
 
             var a = moment([2022, 12, 19]);
             var b = moment([2022, 12, 25]);
+
             //let cha1 = a.diff(b); // 86400000
             // debugger;
             // console.log(cha1);
