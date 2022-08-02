@@ -4,7 +4,7 @@
         <HelloWorld msg="Welcome to Your Vue.js App" />
         <a-button type="primary">Ant Design Vue</a-button>
         <a-icon style="font-size:80px;color: #8be27e;" type="team" />########################
-        <icon-font style="color:#686868;font-size:58px;" type="icon-qunzuduoren" />
+        <icon-font style="color:#FF0000;font-size:58px;" type="icon-qunzuduoren" />
         {{restData}}
         <a-button @click="bandClick">配置</a-button>
         <a-button @click="resetClick">重置</a-button>
@@ -14,6 +14,7 @@
 <script>
 import HelloWorld from '@/components/HelloWorld.vue';
 import moment from 'moment';
+import axios from 'axios';
 export default {
     name: 'home',
     components: {
@@ -37,6 +38,8 @@ export default {
         this.arrayFind();
         console.log('#################useMoment#######################');
         this.useMoment();
+        console.log('#################useAxios#######################');
+        this.useAxios();
     },
     methods: {
         /**
@@ -108,6 +111,7 @@ export default {
         bandClick() {
             this.restData = 456;
         },
+
         /**
          * diff()使用方法
          * 格式	含义	举例	备注
@@ -180,6 +184,21 @@ export default {
             //let cha1 = a.diff(b); // 86400000
             // debugger;
             // console.log(cha1);
+        },
+
+        /**
+         * axios mock
+         * **/
+        useAxios() {
+            axios
+                .post('/list')
+                .then((res) => {
+                    debugger;
+                    const rest = res;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         },
     },
 };

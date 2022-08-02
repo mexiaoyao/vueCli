@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import "./mock/index.js";
+
 // ant-design-vue 引入组件库 引入样式表--
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
