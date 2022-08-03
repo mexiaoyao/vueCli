@@ -193,8 +193,8 @@ export default {
             axios
                 .post('/list')
                 .then((res) => {
-                    debugger;
                     const rest = res;
+                    console.log('rest:' + rest);
                 })
                 .catch((error) => {
                     console.log(error);
