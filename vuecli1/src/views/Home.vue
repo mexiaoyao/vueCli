@@ -6,6 +6,8 @@
         <a-icon style="font-size:80px;color: #8be27e;" type="team" />########################
         <icon-font style="color:#FF0000;font-size:58px;" type="icon-qunzuduoren" />
         {{restData}}
+        ###
+        {{username}}
         <a-button @click="bandClick">配置</a-button>
         <a-button @click="resetClick">重置</a-button>
     </div>
@@ -24,6 +26,12 @@ export default {
         return {
             restData: 123,
         };
+    },
+    computed: {
+        username() {
+            // 我们很快就会看到 `params` 是什么
+            return this.$route.name;
+        },
     },
     created() {
         console.log('###############arrayEvery#########################');

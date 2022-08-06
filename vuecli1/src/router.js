@@ -28,6 +28,11 @@ export default new Router({
           name: "index",
           component: () => import("./views/Index.vue"),
         },
+        {
+          path: "/filedId/:id/:uuid",
+          name: "filedid",
+          component: () => import("./views/filedId.vue"),
+        },
       ],
     },
     // {
