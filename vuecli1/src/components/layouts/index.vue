@@ -4,15 +4,14 @@
             <router-link to="/home">Home</router-link>|
             <router-link to="/about">About</router-link>|
             <router-link to="/index">Index</router-link>|
-            <router-link to="/filedId/5/15">filedId</router-link>
+            <router-link to="/filedId">filedId</router-link>
         </a-layout-header>
         <a-layout-content>
-            <a-breadcrumb :routes="routes">
-                <a-breadcrumb-item>>当前位置：</a-breadcrumb-item>
-                <a-breadcrumb-separator>:</a-breadcrumb-separator>
-                <template #itemRender="{ route, params, routes, paths }">
-                    <span v-if="routes.indexOf(route) === routes.length - 1">{{route.breadcrumbName}}</span>
-                    <router-link :to="paths.join('/')" v-else>{{route.breadcrumbName}}</router-link>
+            <a-breadcrumb :separator="separator">
+                <a-breadcrumb-item>当前位置：</a-breadcrumb-item>
+                <template v-for="(item,index) in $route.matched">
+                    <a-breadcrumb-item :key="item.name" v-if="index >0">{{ item.name }}</a-breadcrumb-item>
+                    <a-breadcrumb-separator :key="item.name" v-if="index >0">></a-breadcrumb-separator>
                 </template>
             </a-breadcrumb>
             <router-view />
@@ -21,25 +20,22 @@
     </a-layout>
 </template>
 <script>
+import { log } from 'console';
+import { watch } from 'vue';
 export default {
     name: 'layouts',
     data() {
         return {
-            routes: [
-                {
-                    path: 'home',
-                    breadcrumbName: 'home',
-                },
-                {
-                    path: 'about',
-                    breadcrumbName: 'about',
-                },
-                {
-                    path: 'index',
-                    breadcrumbName: 'index',
-                },
-            ],
+            separator: '',
         };
+    },
+    watch: {
+        $route: {
+            handler(newValue, oldValue) {
+                console.log(newValue.matched);
+            },
+            deep: true,
+        },
     },
 };
 </script>

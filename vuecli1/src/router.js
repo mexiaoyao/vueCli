@@ -29,9 +29,16 @@ export default new Router({
           component: () => import("./views/Index.vue"),
         },
         {
-          path: "/filedId/:id/:uuid",
+          path: "/filedId",
           name: "filedid",
           component: () => import("./views/filedId.vue"),
+          children: [
+            {
+              path: "/detail/:id/:uuid",
+              name: "detail",
+              component: () => import("./views/filedId.vue"),
+            },
+          ],
         },
       ],
     },
