@@ -7,40 +7,22 @@
             <router-link to="/filedId">filedId</router-link>
         </a-layout-header>
         <a-layout-content>
-            <a-breadcrumb :separator="separator">
-                <a-breadcrumb-item>当前位置：</a-breadcrumb-item>
-                <template v-for="(item,index) in $route.matched">
-                    <a-breadcrumb-item :key="item.name" v-if="index >0">{{ item.name }}</a-breadcrumb-item>
-                    <a-breadcrumb-separator :key="item.name" v-if="index >0">></a-breadcrumb-separator>
-                </template>
-            </a-breadcrumb>
+            <Breadcrumb />
             <router-view />
         </a-layout-content>
         <a-layout-footer>Footer</a-layout-footer>
     </a-layout>
 </template>
 <script>
-import { log } from 'console';
-import { watch } from 'vue';
+import Breadcrumb from './breadcrumb';
 export default {
     name: 'layouts',
+    components: { Breadcrumb },
     data() {
-        return {
-            separator: '',
-        };
+        return {};
     },
-    watch: {
-        $route: {
-            handler(newValue, oldValue) {
-                console.log(newValue.matched);
-            },
-            deep: true,
-        },
-    },
+    watch: {},
 };
 </script>
 <style>
-#components-layout-demo-basic .code-box-demo {
-    text-align: center;
-}
 </style>
