@@ -1,10 +1,7 @@
 <template>
     <a-layout style="height:100%">
         <a-layout-header>
-            <router-link to="/home">Home</router-link>|
-            <router-link to="/about">About</router-link>|
-            <router-link to="/index">Index</router-link>|
-            <router-link to="/filedId">filedId</router-link>
+            <get-menu />
         </a-layout-header>
         <a-layout-content>
             <Breadcrumb />
@@ -15,9 +12,10 @@
 </template>
 <script>
 import Breadcrumb from './breadcrumb';
+import GetMenu from './getMenu';
 export default {
     name: 'layouts',
-    components: { Breadcrumb },
+    components: { Breadcrumb, GetMenu },
     data() {
         return {};
     },

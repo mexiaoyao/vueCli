@@ -81,6 +81,7 @@ export default {
         /**
          * 返回满足条件的变量组成新数组
          * 遍历全部
+         * 读 费哦特
          * **/
         arrFilter() {
             const arrFilter = [1, 2, 3, 4, 5, 6];
@@ -162,6 +163,7 @@ export default {
             moment().format('llll'); // 2021年5月11日星期二 18:42
          * **/
         useMoment() {
+            //读 meng te 第四声
             //npm install moment --save
             //import moment from 'moment'
             //Vue.prototype.$moment = moment; 在main中实现全局
