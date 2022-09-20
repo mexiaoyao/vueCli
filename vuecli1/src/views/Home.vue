@@ -48,6 +48,10 @@ export default {
         this.useMoment();
         console.log('#################useAxios#######################');
         this.useAxios();
+        console.log('#################flatMet#######################');
+        this.flatMet();
+        console.log('#################booleanMet#######################');
+        this.booleanMet();
     },
     methods: {
         /**
@@ -209,6 +213,35 @@ export default {
                 .catch((error) => {
                     console.log(error);
                 });
+        },
+
+        /**
+         *flat 将多维数组拉平 成一维数组
+         * **/
+        flatMet() {
+            let arr = [1, 2, 3, [3, 4, 5, [6, 7], 8], 9];
+            console.log('flat:' + arr.flat());
+        },
+
+        /**
+         * 其它数据类型转为 Boolean为true的有
+            在js中只有“0/NaN/null/空字符串/undefined”这五个值转换为布尔类型的false，其余都是true。
+            ² undefined（未定义，找不到值时出现）
+            ² null（代表空值）
+            ² 0——数字0（字符串"0"布尔值为true）
+            ² NaN（无法计算结果时出现，表示"非数值"）
+            ² ""（双引号）或''（单引号）空字符串（中间有空格时也是true）
+            字符串"false"布尔值为true（所有字符串都为真）。
+            **/
+        booleanMet() {
+            console.log('0:' + Boolean(0));
+            console.log('NaN:' + Boolean(NaN));
+            console.log('null:' + Boolean(null));
+            console.log('undefined:' + Boolean(undefined));
+            console.log('' + Boolean(''));
+            console.log(' ' + Boolean(' '));
+            console.log('false' + Boolean(false));
+            console.log('false' + Boolean('false'));
         },
     },
 };
