@@ -36,6 +36,8 @@ export default {
     created() {
         console.log('###############arrayEvery#########################');
         this.arrayEvery();
+        console.log('###############arraySome#########################');
+        this.arraySome();
         console.log('##################arrMap######################');
         this.arrMap();
         console.log('##################arrFilter######################');
@@ -56,21 +58,48 @@ export default {
     methods: {
         /**
          * every不满足条件时即返回false并只执行此次，不再继续执行
+         * every()方法的定义与用法：
+            every()方法用于检测数组中的所有元素是否都满足指定条件（该条件为一个函数）。
+            every()方法会遍历数组的每一项，如果有有一项不满足条件，则表达式返回false,剩余的项将不会再执行检测；如果遍历完数组后，每一项都符合条，则返回true。
+
+            //reverse()倒序
+
+            **空数组返回true
+
+            兼容性：不兼容IE6～8。
          * **/
         arrayEvery() {
-            const parmes = [1, 2, 3, 4, 5];
+            const parmes = [1, 3, 2, 4, 5];
             console.log(
-                parmes.every((item, index, arr) => {
+                parmes.reverse().every((item, index, arr) => {
                     console.log('item=>' + item + ' index=》' + index + ' arr=>' + arr);
                     return item > 3;
                 })
             );
             console.log(parmes);
         },
+
+        /**
+         *不会对空数组进行检测，不会改变数组 只要有一个满足条件就会返回true
+         空数组返回false
+
+         兼容性：不兼容IE6～8。
+         * **/
+        arraySome() {
+            const parmes = [1, 3, 2, 4, 5];
+            console.log(
+                parmes.some((item, index, arr) => {
+                    console.log('item=>' + item + ' index=》' + index + ' arr=>' + arr);
+                    return item > 3;
+                })
+            );
+            console.log(parmes);
+        },
+
         /**
          * 会遍历所有参数
          * 遍历中必须加都return 否则返回结果中不满足条件的会返回undefinde
-         *
+         *兼容性：不兼容IE6～8。
          * **/
         arrMap() {
             const arrMap = [1, 2, 3, 4, 5];
@@ -86,6 +115,7 @@ export default {
          * 返回满足条件的变量组成新数组
          * 遍历全部
          * 读 费哦特
+         * 兼容性：不兼容IE6～8。
          * **/
         arrFilter() {
             const arrFilter = [1, 2, 3, 4, 5, 6];
@@ -97,6 +127,7 @@ export default {
         },
         /**
          * 返回满足条件的变量下标
+         * 兼容性：不兼容IE6～8。
          * **/
         arrayIndexOf() {
             const arrayIndexOf = [1, 2, 3, 4, 5, 6];
