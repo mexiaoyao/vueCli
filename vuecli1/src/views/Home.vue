@@ -17,6 +17,7 @@
 import HelloWorld from '@/components/HelloWorld.vue';
 import moment from 'moment';
 import axios from 'axios';
+import { debug } from 'console';
 export default {
     name: 'home',
     components: {
@@ -54,8 +55,35 @@ export default {
         this.flatMet();
         console.log('#################booleanMet#######################');
         this.booleanMet();
+        console.log('#################assignMet#######################');
+        this.assignMet();
+        console.log('#################spliceMet#######################');
+        this.spliceMet();
     },
     methods: {
+        spliceMet() {
+            let arr = [1, { a: 5 }, 3, 4, 5, 6];
+            //let ar1 = arr.splice(0, 1); //返回被删除的元素
+            //debugger;
+            //console.log('ar1:' + ar1);
+            let ar2 = arr.splice(0); //arr从小标为1(包括1)的元素开始截取（达到复制功能）,此时arr只剩第一个元素，其他元素已经被删除
+            console.log('ar2:' + ar2);
+        },
+        /**
+         * Object.assign(target, ...sources);target: 目标对象sources: 源对象
+         * Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+         *
+         * ...sources会将所有属性的值赋值给目标对象，如有重复属性即会自动后面的覆盖前面的，源对象属性值不变
+         * **/
+        assignMet() {
+            let a = { a: 1, b: 2 };
+            let b = { c: 3, d: 4 };
+            let c = { d: null };
+            Object.assign(a, b, c);
+            console.log('a:' + a);
+            console.log('b:' + b);
+            //console.log('c:' + c);
+        },
         /**
          * every不满足条件时即返回false并只执行此次，不再继续执行
          * every()方法的定义与用法：

@@ -40,6 +40,12 @@ export default new Router({
             },
           ],
         },
+        //测试data和computed的区别
+        {
+          path: "/computedUrl",
+          name: "computedName",
+          component: () => import("./views/computedPage.vue"),
+        },
       ],
     },
     // {
