@@ -10,6 +10,8 @@
         <span>|</span>
         <router-link to="/computedUrl">computedUrl</router-link>
         <span>|</span>
+        <router-link to="/provideInject">provideInject</router-link>
+        <span>|</span>
     </div>
 </template>
 <script>

@@ -46,6 +46,12 @@ export default new Router({
           name: "computedName",
           component: () => import("./views/computedPage.vue"),
         },
+        //测试data和computed的区别
+        {
+          path: "/provideInject",
+          name: "provideInject",
+          component: () => import("./views/provideInject.vue"),
+        },
       ],
     },
     // {
