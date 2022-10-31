@@ -12,6 +12,10 @@
         <span>|</span>
         <router-link to="/provideInject">provideInject</router-link>
         <span>|</span>
+        <router-link to="/popPage">popPage</router-link>
+        <span>|</span>
+        <router-link to="/objectKeys">objectKeys</router-link>
+        <span>|</span>
     </div>
 </template>
 <script>

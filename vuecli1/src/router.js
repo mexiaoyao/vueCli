@@ -52,6 +52,18 @@ export default new Router({
           name: "provideInject",
           component: () => import("./views/provideInject.vue"),
         },
+        //测试pop函数
+        {
+          path: "/popPage",
+          name: "popPage",
+          component: () => import("./views/popPage.vue"),
+        },
+        //测试pop函数
+        {
+          path: "/objectKeys",
+          name: "objectKeys",
+          component: () => import("./views/objectKeys.vue"),
+        },
       ],
     },
     // {
