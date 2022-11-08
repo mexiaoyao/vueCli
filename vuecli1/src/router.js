@@ -64,6 +64,12 @@ export default new Router({
           name: "objectKeys",
           component: () => import("./views/objectKeys.vue"),
         },
+        //测试pop函数
+        {
+          path: "/reduceMet",
+          name: "reduceMet",
+          component: () => import("./views/reduceMet.vue"),
+        },
       ],
     },
     // {
