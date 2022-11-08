@@ -301,6 +301,51 @@ export default {
             console.log(' ' + Boolean(' '));
             console.log('false' + Boolean(false));
             console.log('false' + Boolean('false'));
+
+            const a = 0;
+            const b = 1;
+            console.log(a && 'hello');
+            console.log(b && 'hello');
+            console.log(a || 'hello');
+            console.log(b || 'hello');
+
+            const paragraph = `I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`;
+            let str0 = paragraph.replace(
+                /[`:_.~!@#$%^&*()\+=<>?"{}|,\/;'\\[\]·~！@#￥%……&*（）——\+={}|《》？：“”【】、；‘’，。、]/g,
+                ''
+            );
+            let arr1 = str0.split(' ');
+
+            const mapArr = new Map(); //创建一个Map结构数据
+            arr1.map((item) => {
+                //遍历数组
+                if (mapArr.has(item)) {
+                    //如果Map数据中存在当前项，给当前项值（即个数）+1
+                    let current = mapArr.get(item);
+                    mapArr.set(item, (current += 1));
+                } else {
+                    //如果不存在，则添加该项并将它的个数设置为1
+                    mapArr.set(item, 1);
+                }
+            });
+
+            //将map结构数据转换成数组对象，每一项也是数组的形式包裹的key和value
+            const mapEntries = [...mapArr.entries()];
+            mapEntries.sort((pre, nxt) => {
+                return pre[1] < nxt[1] ? 1 : -1;
+            }); //给mapEntries 排序
+            let target = mapEntries.map((item) => {
+                //每个数组中是对象，对象的键值是单词，键值是，单词出现的频率
+                let obj = new Object();
+                let key = item[0];
+                let value = item[1];
+                obj[key] = value;
+                return obj;
+                //返回单词的顺序，从上到下
+                //return item[0];
+            });
+            let target1 = target.splice(0, 5);
+            console.log('target1', target1); //target [ 'ab', 'abc', 'a', 'bc' ]
         },
     },
 };
