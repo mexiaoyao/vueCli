@@ -70,6 +70,12 @@ export default new Router({
           name: "reduceMet",
           component: () => import("./views/reduceMet.vue"),
         },
+        //测试pop函数
+        // {
+        //   path: "/contenteditable",
+        //   name: "contenteditable",
+        //   component: () => import("./views/contenteditable/index.vue"),
+        // },
       ],
     },
     // {

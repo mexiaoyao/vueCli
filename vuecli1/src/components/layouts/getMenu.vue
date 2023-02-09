@@ -18,6 +18,8 @@
         <span>|</span>
         <router-link to="/reduceMet">reduceMet</router-link>
         <span>|</span>
+        <router-link to="/contenteditable">contenteditable</router-link>
+        <span>|</span>
     </div>
 </template>
 <script>
