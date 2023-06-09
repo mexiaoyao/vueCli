@@ -59,6 +59,8 @@ export default {
         this.assignMet();
         console.log('#################spliceMet#######################');
         this.spliceMet();
+        console.log('#################pop()#######################');
+        this.popMet();
     },
     methods: {
         spliceMet() {
@@ -347,6 +349,86 @@ export default {
             let target1 = target.splice(0, 5);
             console.log('target1', target1); //target [ 'ab', 'abc', 'a', 'bc' ]
         },
+
+        /**
+         * pop() 方法用于删除数组的最后一个元素并返回删除的元素。
+            注意：此方法改变数组的长度！
+            提示： 移除数组第一个元素，请使用 shift() 方法。
+
+            延伸：unshift()
+            unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。
+            注意： 该方法将改变数组的数目。
+            提示: 将新项添加到数组末尾，请使用 push() 方法。
+
+            push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+            注意： 新元素将添加在数组的末尾。
+            注意： 此方法改变数组的长度。
+            提示： 在数组起始位置添加元素请使用 unshift() 方法。
+
+            concat() 方法用于连接两个或多个数组。array1.concat(array2, array3,..., arrayX)
+            该方法不会改变现有的数组，而是返回一个新的数组。
+
+            splice() 方法用于添加或删除数组中的元素。
+            注意：这种方法会改变原始数组。
+            数组中添加新元素：
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(2,0,"Lemon","Kiwi");
+            fruits 输出结果：Banana,Orange,Lemon,Kiwi,Apple,Mango
+
+            实例
+            在数组中读取元素：
+            var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+            var citrus = fruits.slice(1,3);
+            citrus 结果输出:
+            Orange,Lemon
+            尝试一下 »
+            定义和用法
+            slice() 方法可从已有的数组中返回选定的元素。
+            slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+            注意： slice() 方法不会改变原始数组。
+
+
+            reverse() 方法用于颠倒数组中元素的顺序。
+            颠倒数组中元素的顺序：
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.reverse();
+            fruits 结果输出：Mango,Apple,Orange,Banana
+
+            定义和用法
+            sort() 方法用于对数组的元素进行排序。
+            排序顺序可以是字母或数字，并按升序或降序。
+            默认排序顺序为按字母升序。
+            注意：当数字是按字母顺序排列时"40"将排在"5"前面。
+            使用数字排序，你必须通过一个函数作为参数来调用。
+            函数指定数字是按照升序还是降序排列。
+            这些说起来可能很难理解，你可以通过本页底部实例进一步了解它。
+            注意： 这种方法会改变原始数组！。
+            数字排序（数字和升序）：
+            var points = [40,100,1,5,25,10];
+            points.sort(function(a,b){
+                return a-b；
+            });
+            fruits输出结果：
+            1,5,10,25,40,100      
+
+            数字排序（数字和降序）：
+            var points = [40,100,1,5,25,10];
+            points.sort(function(a,b){return b-a});
+            fruits输出结果：
+            100,40,25,10,5,1
+            https://www.runoob.com/jsref/jsref-sort.html
+
+            
+
+            https://blog.csdn.net/babyxue/article/details/79884889
+
+
+         * **/
+        popMet(){
+            let fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let ss = fruits.pop();
+            console.log('ss', ss); //显示Mango，即返回被删除的元素
+        }
     },
 };
 </script>
